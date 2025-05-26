@@ -14,11 +14,11 @@ fi
 if [ ! -d "$dir_path" ]
 then	
 	echo "[ $(date) ] : Folder $dir_path does not exist" | tee -a $log_file
-	exit
+	exit 1
 fi
 
 cd $(dirname $dir_path)
-tar -cf "$file_name" $dir_name
+tar -cf "${parent_dir}/$file_name" "$dir_name"
 cd -
 
 if [ -f "${parent_dir}/${file_name}" ]
