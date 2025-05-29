@@ -3,6 +3,7 @@ archive_name="logs_backup_$(date +"%d%m%Y-%H%M%S").tar"
 archive_dir="/root/bash_scripts/LogArchival/Archives"
 log_file="/root/bash_scripts/LogArchival/Archives/logs_backup_$(date +"%d%m%Y").log"
 
+
 if [ ! -d "$archive_dir" ]
 then
         mkdir $archive_dir
@@ -11,6 +12,14 @@ fi
 echo "">>$log_file
 echo "#################Backup log for $target_dir###################"| tee -a $log_file
 echo $(date) | tee -a $log_file
+
+if [ -z "$target_dir" ]
+then
+
+        echo "[ $(date) ]: Usage $0 <directory path>"| tee -a $log_file
+        exit 1
+fi
+
 if [ ! -d "$target_dir" ]
 then
 
