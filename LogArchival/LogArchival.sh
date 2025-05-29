@@ -11,7 +11,7 @@ fi
 echo "">>$log_file
 echo "#################Backup log for $target_dir###################"| tee -a $log_file
 echo $(date) | tee -a $log_file
-if [ ! -d $target_dir ]
+if [ ! -d "$target_dir" ]
 then
 
 	echo "[ $(date) ]: $target_dir does not exist."| tee -a $log_file
@@ -28,12 +28,12 @@ done
 
 files_lst="${files_lst:1}"
 
-cd $target_dir
+cd "$target_dir"
 
 tar -cf $archive_name $files_lst
 
 
-mv $archive_name $archive_dir
+mv "$archive_name" "$archive_dir"
 
 cd - >>/dev/null
 
