@@ -15,7 +15,7 @@ if [ ! -d "$target_dir" ]
 then
 
 	echo "[ $(date) ]: $target_dir does not exist."| tee -a $log_file
-
+	exit 1
 fi
 
 
