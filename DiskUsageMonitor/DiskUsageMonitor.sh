@@ -13,12 +13,6 @@ then
 	exit 1
 fi
 
-#res=$(df -Ph | tail -n +2 |awk '{if ($5>'$threshold'){print "[ '$(date +"%d-%m-%Y")' '$(date +"%H:%M:%S")' ]: ALERT "$1" is "$5" full"}}') 
-
-#if [ -n "$res" ]
-#then
-#	echo "$res"
-#fi
 
 for dsk in $(echo "$(df -Ph |tail -n +2| awk '{print $1 "##" $5}')");
 do
