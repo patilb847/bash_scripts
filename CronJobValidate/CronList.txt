@@ -1,0 +1,2 @@
+bhushan|0 * * * * /home/bhushan/bash_scripts/ServiceMonitor/ServiceMonitor.sh
+root|0 * * * * /home/bhushan/bash_scripts/DiskUsageMonitor/DiskUsageMonitor.sh 80
