@@ -13,19 +13,22 @@ then
 	echo "Usage $0 <cron file>"
 	exit 1
 fi
+OLDIFS=$IFS
 IFS=$'\n'
+
 for cron_j in $(cat "$cron_lst")
 do
-	cron_user=$(echo $cron_j | cut -d "|" -f1)
-	cron_job=$(echo $cron_j | cut -d "|" -f2)
+	cron_user=$(echo "$cron_j" | cut -d "|" -f1)
+	cron_job=$(echo "$cron_j" | cut -d "|" -f2)
 	
 
 	crontab -l -u $cron_user 2>/dev/null| grep -Fx "$cron_job" > /dev/null 2>&1
 	
-       	if [ $? = 1 ]
+       	if [ $? -ne 0 ]
 	then
 		echo "[ $(date) ]: ALERT cron for $cron_user: $cron_job " | tee -a $log_file
 
 	fi
 
 done
+IFS=$OLDIFS
