@@ -13,5 +13,6 @@ cd14a8394f0635f8230f70b5b7bd1b6799832e73381482c9fe5bb4aefc3258af  /etc/logrotate
 99dcc4c00458f87859af852be1b65fc0eb6a633911d80e1cdb0ffd287ee64e30  /etc/logrotate.d/rsyslog
 9084fea8d03c1e30c562a86a45f54c44005bb8e130d3c5df8c84513e11570af4  /etc/logrotate.d/speech-dispatcher
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  /etc/logrotate.d/test_log1
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  /etc/logrotate.d/test_log2
 877ba23066681022a5455abe2b4581cfc89adede9232ea2ce0f21e3a734f9b2b  /etc/logrotate.d/ufw
 81eec3d3e01e4263ffc6aab6aeee74f3b260f1df4c692525312608f7a60db048  /etc/logrotate.d/wtmp

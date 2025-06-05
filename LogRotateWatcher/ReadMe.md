@@ -1,6 +1,11 @@
 *Usage
 
-	-this script monitors logrotate.conf and all files inside logrotate.d directory.
-	-on first run script creates base file which contains hash values for all logrotate files, for every run after that new file with hash values will be generated and compared against basefile with diff command.
-	-log will be generated only if any new logrotate file is added/modified or removed.
-	-for starting script with new base file run ./LogRotateWatcher.sh <true>.
+		This script monitors changes to /etc/logrotate.conf and all files under /etc/logrotate.d/.
+
+		On the first run, it creates a baseline hash file of the monitored files.
+
+		On every subsequent run, it generates a new hash file and compares it against the baseline using diff.
+
+		A log is generated only when a file is added, removed, or modified.
+
+		To reset the baseline hash file manually, run the script with the argument true:
