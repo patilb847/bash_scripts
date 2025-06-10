@@ -7,11 +7,12 @@ then
 fi
 
 command -v apt > /dev/null
-apt_check="false"
 if [ $? -eq 0 ]
 then
-	apt_check="true"
 	upgrade_list=$(apt list --upgradable)
+else
+	echo "[ $(date) ]: apt is not available validate system version"| tee -a $log_file
+	exit 1
 fi
 
 if [ -n "$upgrade_list" ]
