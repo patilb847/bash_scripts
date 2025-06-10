@@ -9,7 +9,7 @@ fi
 command -v apt > /dev/null
 if [ $? -eq 0 ]
 then
-	upgrade_list=$(apt list --upgradable)
+	upgrade_list=$(apt list --upgradable 2>/dev/null | grep -v "Listing...")
 else
 	echo "[ $(date) ]: apt is not available validate system version"| tee -a $log_file
 	exit 1
@@ -25,7 +25,7 @@ while IFS= read -r line; do
 	package_architecture=$(echo "$line" | awk -F " " '{print $3}')
 	current_version=$(echo "$line" | awk -F "$package_architecture" '{print $2}')
 
-	echo "[ $(date) ]: Package $package can be updated from $current_version to $available_package_version"| tee -a $log_file
+	echo "[ $(date) ]: Package: $package | Current: $current_version | Available: $available_package_version"| tee -a $log_file
 
 done <<< $upgrade_list
 
