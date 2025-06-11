@@ -18,6 +18,9 @@ elif [ ! $(command -v dnf > /dev/null) ]
 then
 	update_cmd="dnf"
 	upgrade_list=$(dnf check-update 2>/dev/null)
+else
+    echo "[ $(date) ]: No supported package manager found. Exiting." | tee -a $log_file
+    exit 1
 fi
 
 
@@ -39,7 +42,7 @@ while IFS= read -r line; do
     		package_arch=$(echo "$line"| awk '{print $1}' | awk -F "." '{print $2}')
 		available_package_version=$(echo "$line"|awk '{print $2}')
 		package_repo=$(echo "$line"|awk '{print $3}')
-		current_version=$(rpm -q "$package")
+		current_version=$(rpm -q --qf '%{VERSION}-%{RELEASE}' "$package")
 	fi
 	echo "[ $(date) ]: Package: $package | Current: $current_version | Available: $available_package_version"| tee -a $log_file
 done <<< $upgrade_list
