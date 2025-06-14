@@ -64,7 +64,7 @@ while IFS= read -r line;do
         then
                 sha256sum "$line" >> "$current_file"
         else
-                echo "[ $(date) ]: $line does not exist , no file or directory" | tee -a $log_file
+		echo "[ $(date) ]: (ALERT) $line does not exist , no file or directory" | tee -a $log_file
         fi
 
 done < "$paths_file"
@@ -89,9 +89,10 @@ while IFS= read -r line;do
 	if [[ "$line" == \>* ]]
 	then
 		echo "[ $(date) ]: (ALERT) $(echo "$line" | awk '{print $NF}') is  modified file" | tee -a $log_file
+	
+	elif [[ "$line" == \<* ]]
+	then
+		echo "[ $(date) ]: (ALERT) $(echo "$line" | awk '{print $NF}') is  deleted file" | tee -a $log_file
 	fi
 
-
 done <<< "$diff_res"
-
-
