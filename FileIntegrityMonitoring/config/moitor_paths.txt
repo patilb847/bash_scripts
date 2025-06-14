@@ -1,0 +1,6 @@
+/home/bhushan/IMG_20220205_105711.jpg
+/home/bhushan/IMG20220205120335.jpg
+/home/bhushan/git_token
+/home/bhushan/a
+/home/bhushan/b
+/etc/logrotate.d
