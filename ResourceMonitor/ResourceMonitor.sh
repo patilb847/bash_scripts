@@ -3,7 +3,7 @@ log_dir="/root/bash_scripts/ResourceMonitor/log/"
 
 if [ ! -d "$log_dir" ]
 then
-	mkdir $log_dir
+	mkdir "$log_dir"
 fi
 
 
