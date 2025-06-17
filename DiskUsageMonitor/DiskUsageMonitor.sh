@@ -1,6 +1,6 @@
 threshold=$1
-log_file="/home/bhushan/bash_scripts/DiskUsageMonitor/log/DiskMonitor$(date +"%d%m%Y%H%M%S").log"
-log_dir="/home/bhushan/bash_scripts/DiskUsageMonitor/log/"
+log_file="./log/DiskMonitor$(date +"%d%m%Y%H%M%S").log"
+log_dir="./log/"
 
 if [ ! -d "$log_dir" ]
 then
