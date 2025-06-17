@@ -22,6 +22,8 @@ jobs:
 
                 - name: Run Disk Usage Monitor Script
                   run: |
+                        whoami
+                        pwd
                         cd DiskUsageMonitor 
                         chmod +x DiskUsageMonitor.sh
                         ./DiskUsageMonitor.sh ${{ github.event.inputs.threshold }}

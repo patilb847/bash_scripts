@@ -19,6 +19,8 @@ jobs:
 
     - name: Run Resource Monitor Script
       run: |
-        cd ResourceMonitor
-        chmod +x ResourceMonitor.sh
-        ./ResourceMonitor.sh
+              whoami
+              pwd
+              cd ResourceMonitor
+              chmod +x ResourceMonitor.sh
+              ./ResourceMonitor.sh
