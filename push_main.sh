@@ -1,4 +1,4 @@
-if [ -z $1 ]
+if [ -z "$1" ]
 then
 	echo "**ALERT mising commit message (./script <Message>)"
 	exit 1
