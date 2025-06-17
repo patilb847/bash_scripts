@@ -16,11 +16,11 @@ jobs:
                 runs-on: ubuntu-latest
 
                 steps:
-                        - name: Checkout repository
+                - name: Checkout repository
                         uses: actions/checkout@v4
 
                 - name: Run Disk Usage Monitor Script
-                run: |
+                        run: |
         cd DiskUsageMonitor 
         chmod +x DiskUsageMonitor.sh
         ./DiskUsageMonitor.sh ${{ github.event.inputs.threshold }}
