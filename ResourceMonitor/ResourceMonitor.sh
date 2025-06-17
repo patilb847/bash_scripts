@@ -1,9 +1,9 @@
-log_file="/root/bash_scripts/ResourceMonitor/log/resource_monitor$(date +"%d%m%Y%H%M%S").log"
-log_dir="/root/bash_scripts/ResourceMonitor/log/"
+log_file="/home/bhushan/bash_scripts/ResourceMonitor/log/resource_monitor$(date +"%d%m%Y%H%M%S").log"
+log_dir="/home/bhushan/bash_scripts/ResourceMonitor/log/"
 
 if [ ! -d "$log_dir" ]
 then
-	mkdir "$log_dir"
+	mkdir -p "$log_dir"
 fi
 
 
