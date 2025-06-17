@@ -5,12 +5,12 @@ on:
                 paths:
                         - 'DiskUsageMonitor/**'
                         - 'github/workflows/**'
-                workflow_dispatch:
-                        inputs:
-                                threshold:
-                                        description: 'Disk usage threshold percentage'
-                                        required: true
-                                        default: '80'
+        workflow_dispatch:
+                inputs:
+                       threshold:
+                                description: 'Disk usage threshold percentage'
+                                required: true
+                                default: '80'
 
 jobs:
         run-script:
