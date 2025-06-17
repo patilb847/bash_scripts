@@ -1,23 +1,23 @@
+# ResourceMonitor/.github/workflows/resource_monitor.yml
+
 name: Resource Monitor Automation
 
 on:
-        push:
-                paths:
-                        -"ResourceMonitor/**"
-
-                workflow_dispatch:
+  push:
+    paths:
+      - 'ResourceMonitor/**'
+  workflow_dispatch:
 
 jobs:
-        run-script:
-                runs-on: ubuntu-latest
+  run-script:
+    runs-on: ubuntu-latest
 
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-                steps:
-                        - name: Checkout repository
-                          uses: actions/checkout@v4
-
-                        - name: Run Resource Monitor Script
-                          run: |
-                                cd ResourceMonitor
-                                chmod +x resource_monitor.sh
-                                ./resource_monitor.sh
+    - name: Run Resource Monitor Script
+      run: |
+        cd ResourceMonitor
+        chmod +x resource_monitor.sh
+        ./resource_monitor.sh
