@@ -1,5 +1,5 @@
-log_file="./log/resource_monitor$(date +"%d%m%Y%H%M%S").log"
-log_dir="./log/"
+log_file="$(pwd)/log/resource_monitor$(date +"%d%m%Y%H%M%S").log"
+log_dir="$(pwd)/log/"
 
 if [ ! -d "$log_dir" ]
 then

@@ -1,6 +1,6 @@
 threshold=$1
-log_file="./log/DiskMonitor$(date +"%d%m%Y%H%M%S").log"
-log_dir="./log/"
+log_file="$(pwd)/log/DiskMonitor$(date +"%d%m%Y%H%M%S").log"
+log_dir="$(pwd)/log/"
 
 if [ ! -d "$log_dir" ]
 then
