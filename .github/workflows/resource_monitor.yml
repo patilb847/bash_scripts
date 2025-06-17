@@ -20,5 +20,5 @@ jobs:
     - name: Run Resource Monitor Script
       run: |
         cd ResourceMonitor
-        chmod +x resource_monitor.sh
-        ./resource_monitor.sh
+        chmod +x ResourceMonitor.sh
+        ./ResourceMonitor.sh
