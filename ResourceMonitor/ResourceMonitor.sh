@@ -1,5 +1,5 @@
-log_file="/home/bhushan/bash_scripts/ResourceMonitor/log/resource_monitor$(date +"%d%m%Y%H%M%S").log"
-log_dir="/home/bhushan/bash_scripts/ResourceMonitor/log/"
+log_file="./log/resource_monitor$(date +"%d%m%Y%H%M%S").log"
+log_dir="./log/"
 
 if [ ! -d "$log_dir" ]
 then
